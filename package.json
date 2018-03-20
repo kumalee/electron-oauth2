@@ -1,0 +1,47 @@
+{
+  "name": "electron-oauth2",
+  "version": "1.0.0",
+  "description": "oauth2 lib for electron",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "flow": "flow",
+    "flow-typed": "rimraf flow-typed/npm && flow-typed install --overwrite || true",
+    "postinstall": "npm run flow-typed",
+    "build": "babel src/ -d lib/",
+    "prepublish": "npm run build",
+    "predemo": "babel ./demo/renderer.js -o ./demo/renderer-built.js && babel ./demo/config.js -o ./demo/config-built.js",
+    "demo": "electron -r babel-register ./demo",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kumalee/electron-oauth2.git"
+  },
+  "keywords": [
+    "oauth2",
+    "electron"
+  ],
+  "author": "Kuma Li",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kumalee/electron-oauth2/issues"
+  },
+  "homepage": "https://github.com/kumalee/electron-oauth2#readme",
+  "dependencies": {
+    "node-fetch": "^2.1.1",
+    "querystring": "^0.2.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-flow": "^6.23.0",
+    "babel-register": "^6.26.0",
+    "electron": "^1.8.3",
+    "flow-bin": "^0.67.1",
+    "flow-typed": "^2.4.0",
+    "spectron": "^3.8.0"
+  }
+}
