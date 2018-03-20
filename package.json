@@ -12,9 +12,9 @@
     "postinstall": "npm run flow-typed",
     "build": "babel src/ -d lib/",
     "prepublish": "npm run build",
-    "predemo": "babel ./demo/renderer.js -o ./demo/renderer-built.js && babel ./demo/config.js -o ./demo/config-built.js",
+    "predemo": "babel ./demo/renderer.js -o ./demo/renderer-built.js && babel ./demo/config.js -o ./demo/config-built.js && babel ./demo/index-src.js -o ./demo/index.js",
     "demo": "electron -r babel-register ./demo",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha"
   },
   "repository": {
     "type": "git",
@@ -42,6 +42,7 @@
     "electron": "^1.8.3",
     "flow-bin": "^0.67.1",
     "flow-typed": "^2.4.0",
+    "mocha": "^5.0.4",
     "spectron": "^3.8.0"
   }
 }
